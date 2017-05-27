@@ -1,0 +1,108 @@
+body {
+	margin: 0;
+	font-family: monospace;
+	background: #AAA;
+}
+
+#navbar {
+	width: 100%;
+	list-style-type: none;
+	box-shadow: #000 0px 3px 5px;
+	background: #444;
+}
+
+#navbar a {
+	display: inline-block;
+	list-style-type: none;
+	text-decoration: none;
+	width: 250px;
+	height: 80px;
+	text-align: center;
+	padding-top: 30px;
+	cursor: pointer;
+	font-size: 40px;
+	color: white;
+}
+
+#navbar a:hover {
+	background: #222;
+}
+
+#maincontent {
+	width: 80%;
+	margin: auto;
+	margin-top: 80px;
+	min-height: 500px;
+	background: #888;
+}
+
+#maincontent h1 {
+	width: calc(100% - 40px);
+	background: #444;
+	padding: 8px 20px;
+	color: white;
+	margin: 0;
+}
+
+#maincontent h2 {
+	width: calc(100% - 40px);
+	background: #444;
+	padding: 8px 20px;
+	color: white;
+	margin: 0;
+}
+
+#maincontent h3 {
+	margin: 4px 20px;
+}
+
+#maincontent p {
+	width: calc(100% - 40px);
+	padding: 8px 20px;
+	margin: 0;
+}
+
+.scoreboard {
+	margin: 20px 40px;
+	white-space: pre;
+	display: inline-block;
+	background: #777;
+	padding: 8px;
+	padding-right: 28px;
+	border-radius: 12px;
+	width: calc(49% - 116px)
+}
+
+@media (min-width: 1200px;) {
+	.scoreboard {
+		width: calc(50% - 116px)
+	}
+}
+
+@media (min-width: 1600px) {
+	.scoreboard {
+		font-size: 16px;
+		width: calc(33.33% - 116px)
+	}
+}
+
+@media (max-width: 1200px) {
+	.scoreboard {
+		font-size: 20px;
+		width: calc(99% - 116px)
+	}
+}
+
+.puzzlename {
+	white-space: pre;
+	background: #555;
+	padding: 3px 8px;
+	width: 100px;
+	border-radius: 8px;
+	margin-bottom: 8px;
+}
+
+.time {
+	white-space: pre;
+	padding-left: 20px;
+}
