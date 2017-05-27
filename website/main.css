@@ -42,7 +42,7 @@ body {
 
 #maincontent h1 {
 	width: calc(100% - 40px);
-	background: #444;
+	background: rgba(100, 100, 100, 0.8);
 	padding: 8px 20px;
 	color: white;
 	margin: 0;
@@ -50,7 +50,7 @@ body {
 
 #maincontent h2 {
 	width: calc(100% - 40px);
-	background: #444;
+	background: rgba(100, 100, 100, 0.8);
 	padding: 8px 20px;
 	color: white;
 	margin: 0;
@@ -70,7 +70,7 @@ body {
 	margin: 20px 40px;
 	white-space: pre;
 	display: inline-block;
-	background: #777;
+	background: rgba(100, 100, 100, 0.8);
 	padding: 8px;
 	padding-right: 28px;
 	border-radius: 12px;
@@ -99,7 +99,7 @@ body {
 
 .puzzlename {
 	white-space: pre;
-	background: #555;
+	background: rgba(100, 100, 100, 0.8);
 	padding: 3px 8px;
 	width: 100px;
 	border-radius: 8px;
