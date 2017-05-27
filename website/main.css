@@ -1,7 +1,11 @@
 body {
 	margin: 0;
 	font-family: Arial;
-	background: https://www.walldevil.com/134340-rubik-cube-wallpaper.html(images-image-embed.jpg) ;
+	background-color: #AAA;
+	background-image: url('https://www.walldevil.com/wallpapers/a17/images-image-embed.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
 }
 
 #navbar {
@@ -33,7 +37,7 @@ body {
 	margin: auto;
 	margin-top: 80px;
 	min-height: 500px;
-	background: #888;
+	background: rgba(100, 100, 100, 0.8);
 }
 
 #maincontent h1 {
