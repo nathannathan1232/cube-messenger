@@ -57,7 +57,15 @@ respond = (message) ->
 	else if includes_scramble(body)
 		scramble = body.match(ALGORITHM_REGEX)[0].replace(/^ +| +$/g, '')
 
-		cube = new Cube(3).move(scramble)
+		if body.match(/[0-9]+x[0-9]+/)
+			size = body.match(/[0-9]+x[0-9]+/)[0].split('x')[0]
+		else
+			size = 3
+
+		if size > 20
+			return 'Can not display scramble for any size above 20x20'
+
+		cube = new Cube(size).move(scramble)
 
 		save_cube_image(cube, './cube.png')
 
@@ -87,7 +95,7 @@ respond = (message) ->
 			puzzle = request[2]
 			
 			return time_tracker.get_all_records(puzzle)
-			
+
 		else
 			puzzle = request[2]
 			type   = request[3]
@@ -107,6 +115,8 @@ respond = (message) ->
 
 	else if body.match(/^\$help$/)
 		return '
+			Use the Graphical Interface at http://67.182.154.189:8005\n
+			\n
 			Help:\n
 			\t<parameter> [optional parameter]
 			\tSet a record: "set record <name> <puzzle> <type> <value>"\n
