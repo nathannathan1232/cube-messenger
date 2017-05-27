@@ -19,12 +19,12 @@ body {
 	display: inline-block;
 	list-style-type: none;
 	text-decoration: none;
-	width: 250px;
-	height: 80px;
+	width: 200px;
+	height: 60px;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 18px;
 	cursor: pointer;
-	font-size: 40px;
+	font-size: 32px;
 	color: white;
 }
 
