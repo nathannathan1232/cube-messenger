@@ -7,15 +7,16 @@ LOGIN_PASSWORD = process.argv[3]
 EVENTS = ['2x2', '3x3', '4x4', '5x5', '6x6', '7x7', 'oh', 'square-1', 'pyraminx', 'skewb', 'megaminx', 'clock', '3bld', '4bld', '5bld', 'mini-guildford', '2x2-5x5', '2x2-7x7']
 TYPES = ['single', 'ao3', 'ao5', 'ao12', 'ao50', 'ao100', 'ao1000']
 
+# Connect to mysql
 conn = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
 	password: 'sql87',
 	database: 'cubes'
 })
-
 conn.connect()
 
+# Changes a time string to minutes, seconds, and miliseconds
 parse_time = (t) ->
 	if t.match(/^[0-9]+\.[0-9]+$/)
 		min = '0'
@@ -46,6 +47,7 @@ parse_time = (t) ->
 
 	return [parseInt(min), parseInt(sec), parseInt(ms)]
 
+# Converts minutes, seconds, and miliseconds to a time string
 time_to_str = (min, sec, ms) ->
 	smin = if min > 0 then min + ':' else ''
 
@@ -96,6 +98,7 @@ respond = (msg, api, thread) ->
 	else if msg.match(/^get records?(?: .+)+/i)
 		m = msg.split(' ')
 
+		# Show results for a puzzle
 		if EVENTS.includes(m[2])
 
 			conn.query('SELECT * FROM records WHERE puzzle = ? ORDER BY minutes, seconds, ms', [m[2]], (err, result, fld) ->
@@ -113,6 +116,7 @@ respond = (msg, api, thread) ->
 				api.sendMessage(res, thread)
 			)
 
+		# Show results for a user
 		else
 
 			conn.query('SELECT * FROM records WHERE user = ? ORDER BY minutes, seconds, ms', [m[2]], (err, result, fld) ->
